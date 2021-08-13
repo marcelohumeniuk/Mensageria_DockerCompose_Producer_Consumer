@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
+
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using publisher_api.Services;
+using System;
+using System.Collections.Generic;
 
 namespace publisher_api.Controllers
 {
+
+
+    public class WeatherForecast
+    {
+        public DateTimeOffset Date { get; set; }
+        public int TemperatureCelsius { get; set; }
+        public string Summary { get; set; }
+    }
+
+
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -20,17 +31,31 @@ namespace publisher_api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+
+
             for (int i = 0; i < 60000; i++)
             {
-               
+
+                var weatherForecast = new WeatherForecast
+                {
+                    Date = DateTime.Parse("2019-08-01"),
+                    TemperatureCelsius = 25,
+                    Summary = "Hot:" + i
+                };
+
+               var resultado=  JsonConvert.SerializeObject(weatherForecast);
+
+
+
+
                 Console.WriteLine("received a Post: ");
-                _messageService.Enqueue("Manda texto:" + i);
+                _messageService.Enqueue(resultado);
             }
 
            
 
 
-            return new string[] { "Fila ativa e já inseriu 10.000: Manda mais ---->" };
+            return new string[] { "Fila ativa e já inseriu 60.000: Manda mais ---->" };
 
 
         }
