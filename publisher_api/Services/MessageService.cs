@@ -1,6 +1,6 @@
+using RabbitMQ.Client;
 using System;
 using System.Text;
-using RabbitMQ.Client;
 
 namespace publisher_api.Services
 {
