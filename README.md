@@ -8,7 +8,7 @@ Produtor e Consumidor de mensagens -> Producer e Consumer
 
 STACK PARA FUNCIONAMENTO
 
-Projeto c# -NET CORE WEB - NET CORE 2.2 LTS ErLang - RabbitMQ gerando mensagens  e Worker (Console) consumindo com 
+Projeto c# -NET CORE WEB - NET CORE 2.2 LTS ErLang - RabbitMQ gerando mensagens  e Worker (Console) consumindo.
 
 1º MODO)Instalar primeiro: http://www.erlang.org/download.html
 
