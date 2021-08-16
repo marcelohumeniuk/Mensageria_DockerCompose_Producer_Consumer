@@ -1,4 +1,4 @@
-Getting Started with .NET Core, Docker, and RabbitMQ
+Getting Started with .NET Core, Docker, and RabbitMQ ..
 
 NET CORE WEB / Console RabbitMQ POC
 
